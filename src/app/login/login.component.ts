@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { FormBuilder , Validators ,FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
+  
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
