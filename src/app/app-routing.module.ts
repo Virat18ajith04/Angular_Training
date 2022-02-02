@@ -5,7 +5,7 @@ import { CustomerModule } from './customer/customer.module';
 import { LayoutComponent } from './layout/layout.component';
 const routes: Routes = [
   {
-    path : 'login',
+    path : '',
     component : LoginComponent
   },
   {

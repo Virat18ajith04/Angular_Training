@@ -11,5 +11,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onShow() {
+    alert('Show button clicked!');
+  }
 }
