@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiserviceService } from 'src/app/servics/apiservice.service';
 
 @Component({
   selector: 'app-invoice',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invoice.component.css']
 })
 export class InvoiceComponent implements OnInit {
-
-  constructor() { }
+comments : any;
+postcom :any;
+  constructor(private router:Router,private service:ApiserviceService) { }
 
   ngOnInit(): void {
+
+      this.service.getStates().subscribe(
+        res=> {
+            this.comments=res        }
+      )
+        
+      this.service.posts().subscribe(
+       res => {
+         this.postcom=res;
+       }
+      )
+      
   }
 
 }

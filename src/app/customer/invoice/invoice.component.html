@@ -2,14 +2,35 @@
 <br>
 <br>
 <div class="row justify-content-center">
-<div class="card text-center col-sm-6" >
+<div class="card text-center col-sm-7" >
     <div class="card-header">
       Invoice Page
     </div>
     <div class="card-body">
-      <h5 class="card-title">Customer</h5>
-      <p class="card-text">Invoice contents.</p>
-    
+      <h5 class="card-title">Get API service </h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">postId</th>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let com of comments.slice(0, 10);">
+            <th scope="row">{{com.postId}}</th>
+            <td>{{com.id}}</td>
+            <td>{{com.name}}</td>
+            <td>{{com.email}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    <h2>Post API Service Below</h2>
+     <p>Id : {{postcom.id}}</p>
+     <p>Title : {{postcom.title}}</p>
+     <p>Body :{{postcom.body}}</p>
     </div>
    
   </div>
