@@ -4,6 +4,7 @@ import { SalesOrderComponent } from './sales-order/sales-order.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Router, RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -30,6 +31,8 @@ const routes : Routes= [
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   exports:[

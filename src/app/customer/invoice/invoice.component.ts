@@ -15,10 +15,10 @@ peoples : any;
 
   ngOnInit(): void {
 
-      this.service.getStates().subscribe(
+      /*this.service.getStates().subscribe(
         res=> {
             this.comments=res        }
-      )
+      )*/
       this.service.getStates1().subscribe(
         res=> {
             this.peoples=res        }

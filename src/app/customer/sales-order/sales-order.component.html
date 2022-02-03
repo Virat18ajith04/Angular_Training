@@ -7,30 +7,42 @@
       Sales order Page
     </div>
     <div class="card-body">
+   
       <h5 class="card-title">Enter Details</h5>
-      <form>
+      <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> Sales Added
+        <button (click)="removeMessage()" type="button" data-bs-dismiss="alert" aria-label="Close">X</button>
+    </div>
+      <form [formGroup]="addPerson" (ngSubmit)="SaveData()" >
+        <div class="form-group row">
+          <label for="name" class="col-sm-3 col-form-label">ID</label>
+          <div class="col-sm-5">
+            <input type="text"   name="id" class="form-control" placeholder="id" formControlName="id">
+          </div>
+        </div>
+        <br>
         <div class="form-group row">
           <label for="name" class="col-sm-3 col-form-label">Name</label>
           <div class="col-sm-5">
-            <input type="text"  class="form-control" id="name" placeholder="Name">
+            <input type="text"   name="name" class="form-control"  placeholder="Name" formControlName="name">
           </div>
         </div>
         <br>
         <div class="form-group row">
           <label for="phone" class="col-sm-3 col-form-label">Phone Number</label>
           <div class="col-sm-5">
-            <input type="text" class="form-control" id="phone" placeholder="Phone number">
+            <input type="text"  name="phone" class="form-control"  placeholder="Phone number" formControlName="phone">
           </div>
         </div>
         <br>
         <div class="form-group row">
           <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
           <div class="col-sm-5">
-            <input type="text" class="form-control" id="quantity" placeholder="quantity">
+            <input type="text"   name="quantity" class="form-control"  placeholder="quantity" formControlName="quantity">
           </div>
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button  class="btn btn-primary">Submit</button>
       </form>
     
     </div>

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiserviceService {
+  url='http://localhost:5000/api/v1/person/';
   constructor( private http : HttpClient) { }
 
 
@@ -21,6 +22,10 @@ export class ApiserviceService {
   
   getStates1(): Observable<any>
   {
-    return this.http.get('https://61fb589487801d0017a2c488.mockapi.io/api/task2/sales')
+    return this.http.get('http://localhost:5000/api/v1/person/')
+  }
+  savePersonData( data: any ) {
+    console.log( data );
+    return this.http.post( this.url, data );
   }
 }

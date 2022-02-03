@@ -23,9 +23,9 @@ import { ApiserviceService } from './servics/apiservice.service';
     BrowserModule,
     AppRoutingModule,
     CustomerModule,
-    ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [ApiserviceService],

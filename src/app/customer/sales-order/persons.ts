@@ -1,6 +1,8 @@
 export class Person {
-    id!: number;
-    name!: string;
-    phone!: string;
-    quantity!: string;
+    constructor(
+    public  id: number,
+    public name: string,
+   public phone: string,
+   public  quantity: number,
+    ) {}
   }
