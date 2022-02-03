@@ -9,7 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ApiserviceService } from './servics/apiservice.service';
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { ApiserviceService } from './servics/apiservice.service';
     CustomerModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]

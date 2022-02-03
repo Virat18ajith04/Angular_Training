@@ -18,4 +18,9 @@ export class ApiserviceService {
     body: 'bar',
     userId: 1001,})
   }
+  
+  getStates1(): Observable<any>
+  {
+    return this.http.get('https://61fb589487801d0017a2c488.mockapi.io/api/task2/sales')
+  }
 }

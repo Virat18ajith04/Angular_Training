@@ -10,6 +10,7 @@ import { ApiserviceService } from 'src/app/servics/apiservice.service';
 export class InvoiceComponent implements OnInit {
 comments : any;
 postcom :any;
+peoples : any;
   constructor(private router:Router,private service:ApiserviceService) { }
 
   ngOnInit(): void {
@@ -18,12 +19,11 @@ postcom :any;
         res=> {
             this.comments=res        }
       )
-        
-      this.service.posts().subscribe(
-       res => {
-         this.postcom=res;
-       }
-      )
+      this.service.getStates1().subscribe(
+        res=> {
+            this.peoples=res        }
+      ) 
+     
       
   }
 
