@@ -8,7 +8,7 @@ var Person = function (person) {
 
 }
 
-// get all persons
+// get all persons from DB
 Person.getAllPersons = (result) => {
     dbConn.query('SELECT * FROM persons', (err, res) => {
         if (err) {
@@ -48,7 +48,7 @@ Person.createPerson = (personReqData, result) => {
 
 // update person
 Person.updatePerson = (id, personReqData, result) => {
-    dbConn.query("UPDATE persons SET first_name=?,name=?,phone=?,quantity=?,organization=?,designation=?,salary=? WHERE id = ?", [personReqData.first_name, personReqData.name, personReqData.phone, personReqData.quantity, personReqData.organization, personReqData.designation, personReqData.salary, id], (err, res) => {
+    dbConn.query("UPDATE persons SET id=?,name=?,phone=?,quantity=? WHERE id = ?", [personReqData.id, personReqData.name, personReqData.phone, personReqData.quantity, id], (err, res) => {
         if (err) {
             console.log('Error while updating the person');
             result(null, err);

@@ -1,26 +1,26 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-// create express app
+
 const app = express();
 
-// setup the server port
+
 const port = process.env.PORT || 5000;
 
-// parse request data content type application/x-www-form-rulencoded
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// parse request data content type application/json
+
 app.use(bodyParser.json());
 
 // define root route
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
-// import person routes
+// import person routes from Routes path
 const personRoutes = require('./src/routes/person.route');
 
-// create person routes
+// create person routes API call
 app.use('/api/v1/person', personRoutes);
 
 // listen to the port
