@@ -35,7 +35,7 @@ myForm!: FormGroup;
     console.log('Password : ',form.value.password);
     if (form.valid) {
       console.log('Logged in');
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/_customer']);
 
   } else {
       console.log('There is a problem with the form');

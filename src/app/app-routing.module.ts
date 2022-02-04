@@ -9,7 +9,7 @@ const routes: Routes = [
     component : LoginComponent
   },
   {
-    path:'admin',
+    path:'_customer',
     component:LayoutComponent,
     children : [
 {
