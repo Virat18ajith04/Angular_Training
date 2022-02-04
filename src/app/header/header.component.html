@@ -1,13 +1,17 @@
 <nav class="navbar navbar-light bg-transparent sticky-top">
   <div class="container-fluid">
-   
-    <button class="navbar-toggler start"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+
+    <button class="navbar-toggler start" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon start"></span>
     </button>
-    
-    <a  class="btn btn-danger btn-md"  [routerLink]="['/']"> Log out
-    </a>
-   
+    <!--
+    <a  class="btn btn-outline-danger btn-md"  [routerLink]="['/']"> Log out
+    </a>-->
+    <button [routerLink]="['/']" type="button" class="btn btn-sm btn-outline-warning">
+      <i class="fa fa-sign-out"></i>
+      Log Out
+    </button>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Customer</h5>
@@ -16,19 +20,17 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="['/_customer/dashboard']" >Dashboard</a>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/_customer/dashboard']">Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/_customer/invoice']">Invoice</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/_customer/salesorder']">Sales Order</a>
-            </li>
+            <a class="nav-link" [routerLink]="['/_customer/salesorder']">Sales Order</a>
+          </li>
         </ul>
       </div>
     </div>
   </div>
 </nav>
-  <!--[routerLink]="['/admin/dashboard']"-->
-
-  
+<!--[routerLink]="['/admin/dashboard']"-->
