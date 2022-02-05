@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiserviceService {
-  url='http://localhost:5000/api/v1/person/';
+  url='http://localhost:5000/api/v1/person';
   constructor( private http : HttpClient) { }
 
 
@@ -27,5 +27,9 @@ export class ApiserviceService {
   savePersonData( data: any ) {
     console.log( data );
     return this.http.post( this.url, data );
+  }
+  deletePerson(id:any)
+  {
+    return this.http.delete( `${this.url}/${id}` );
   }
 }

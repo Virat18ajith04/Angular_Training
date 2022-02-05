@@ -26,5 +26,14 @@ peoples : any;
      
       
   }
+  deletePerson( person_id: any ) {
+    console.log("Deleted ID :",person_id );
+    this.service.deletePerson(person_id).subscribe(
+      (result)=>{
+        console.log(result);
+        this.ngOnInit();
+      }
+    )
+  }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ApiserviceService } from 'src/app/servics/apiservice.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sales-order',
   templateUrl: './sales-order.component.html',
@@ -9,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class SalesOrderComponent implements OnInit {
 
-  constructor( private service: ApiserviceService ) { }
+  constructor( private service: ApiserviceService,private router:Router ) { }
   addPerson=new FormGroup( {
     id: new FormControl( '' ),
     name: new FormControl( '' ),
@@ -25,6 +26,8 @@ export class SalesOrderComponent implements OnInit {
       //console.log( result );
       this.message=true;
       this.addPerson.reset( {} );
+      this.router.navigate(['/_customer/invoice']);
+
     } );
   }
   removeMessage() {
