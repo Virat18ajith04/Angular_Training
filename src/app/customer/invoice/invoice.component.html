@@ -2,7 +2,7 @@
 <div class="row justify-content-center">
 <div class="card text-center col-sm-8" >
     <div class="card-header">
-      Invoice Page
+      Invoice Page  (List of Persons)
     </div>
     <div class="card-body">
       <h5 class="card-title">Get API service </h5>
@@ -24,7 +24,10 @@
             <td>{{p.name}}</td>
             <td>{{p.phone}}</td>
             <td>{{p.quantity}}</td>
-            <td><span (click)="deletePerson(p.id)">Delete</span></td>
+            <td>
+              <i (click)="deletePerson(p.id)" class="fa fa-trash" ></i>
+              &nbsp;
+            </td>
           </tr>
           
         </tbody>
