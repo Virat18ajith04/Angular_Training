@@ -4,41 +4,71 @@
 <div class="row justify-content-center">
 <div class="card text-center col-sm-4" >
     <div class="card-header">
-      Sales order Page
+      Sales order Page (Add Person)
     </div>
     <div class="card-body">
    
       <h5 class="card-title">Enter Details</h5>
+      <br>
       <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Success!</strong> Sales Added
         <button (click)="removeMessage()" type="button" data-bs-dismiss="alert" aria-label="Close">X</button>
     </div>
-      <form [formGroup]="addPerson" (ngSubmit)="SaveData()" >
+      <form [formGroup]="addPerson" (ngSubmit)="SaveData(addPerson)" >
         <div class="form-group row">
           <label for="name" class="col-sm-3 col-form-label">ID</label>
           <div class="col-sm-5">
-            <input type="text"   name="id" class="form-control" placeholder="id" formControlName="id">
+            <input type="text"   name="id" class="form-control" placeholder="Enter ID for the Person" formControlName="id">
+            <small class="form-text text-muted" 
+          *ngIf="addPerson.controls['id'].hasError('required') &&  (addPerson.controls['id'].touched)">
+            Please enter ID.!
+        </small>
           </div>
         </div>
         <br>
         <div class="form-group row">
           <label for="name" class="col-sm-3 col-form-label">Name</label>
           <div class="col-sm-5">
-            <input type="text"   name="name" class="form-control"  placeholder="Name" formControlName="name">
+            <input type="text"   name="name" class="form-control"  placeholder="Enter Name" formControlName="name">
+            <small class="form-text text-muted" 
+          *ngIf="addPerson.controls['name'].hasError('required') &&  (addPerson.controls['name'].touched)">
+            Please enter Name.!
+        </small>
+        <small class="form-text text-muted"
+        *ngIf="addPerson.controls['name'].touched && addPerson.controls['name'].errors?.['minlength']">
+          Please enter Above 5 characters .!
+        </small>
+        <small class="form-text text-muted"
+        *ngIf="addPerson.controls['name'].touched && addPerson.controls['name'].errors?.['maxlength']">
+          Please enter Below 20 Characters .!
+        </small>
           </div>
         </div>
         <br>
         <div class="form-group row">
           <label for="phone" class="col-sm-3 col-form-label">Phone Number</label>
           <div class="col-sm-5">
-            <input type="text"  name="phone" class="form-control"  placeholder="Phone number" formControlName="phone">
+            <input type="text"  name="phone" class="form-control"  placeholder="Enter Phone number" formControlName="phone">
+            <small class="form-text text-muted" 
+          *ngIf="addPerson.controls['phone'].hasError('required') &&  (addPerson.controls['phone'].touched)">
+            Please enter Phone Number.!
+        </small>
+        <small class="form-text text-muted"
+        *ngIf="addPerson.controls['phone'].touched && addPerson.controls['phone'].errors?.['pattern']">
+          Please enter  10 Digit Phone Number .!
+        </small>
           </div>
         </div>
         <br>
         <div class="form-group row">
           <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
           <div class="col-sm-5">
-            <input type="text"   name="quantity" class="form-control"  placeholder="quantity" formControlName="quantity">
+            <input type="text"   name="quantity" class="form-control"  placeholder="Enter quantity" formControlName="quantity">
+            <small class="form-text text-muted" 
+          *ngIf="addPerson.controls['quantity'].hasError('required') &&  (addPerson.controls['quantity'].touched)">
+            Please enter Quantity.!
+        </small>
+        
           </div>
         </div>
         <br>

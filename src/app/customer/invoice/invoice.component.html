@@ -10,9 +10,9 @@
         <thead>
           <tr>
            
-            <th scope="col">id</th>
-            <th scope="col">name</th>
-            <th scope="col">phone</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone No</th>
             <th scope="col">Quantity</th>
             <th scope="col"></th>
             
@@ -25,9 +25,14 @@
             <td>{{p.phone}}</td>
             <td>{{p.quantity}}</td>
             <td>
-              <i (click)="deletePerson(p.id)" class="fa fa-trash" ></i>
+        
+              <!--<i (click)="deletePerson(p.id)" class="fa fa-trash"></i>
+                &nbsp;
+                <a routerLink="/_customer/edit/{{p.id}}"><i class="fa fa-edit"></i></a> </td>>
+              -->
+              <button (click)="deletePerson(p.id)" class="btn btn-sm btn-outline-danger fa fa-trash"> </button>
               &nbsp;
-            </td>
+              <button routerLink="/_customer/edit/{{p.id}}" class="btn btn-sm btn-outline-primary fa fa-edit"></button> 
           </tr>
           
         </tbody>

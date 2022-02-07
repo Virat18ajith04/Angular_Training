@@ -32,4 +32,10 @@ export class ApiserviceService {
   {
     return this.http.delete( `${this.url}/${id}` );
   }
+  getPersonById( id: number ) {
+    return this.http.get( `${this.url}/${id}` );
+  }
+  updatePersonData( id: number, data: any ) {
+    return this.http.put( `${this.url}/${id}`, data );
+  }
 }

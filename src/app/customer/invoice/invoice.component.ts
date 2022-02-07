@@ -31,6 +31,7 @@ peoples : any;
     this.service.deletePerson(person_id).subscribe(
       (result)=>{
         console.log(result);
+        alert("Person Deleted Succesfull");
         this.ngOnInit();
       }
     )

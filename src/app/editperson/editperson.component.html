@@ -1,0 +1,56 @@
+
+<div class="row justify-content-center">
+<div class="card text-center col-sm-4" >
+    <div class="card-header">
+       (Update Person)
+    </div>
+    <div class="card-body">
+   
+      <h5 class="card-title">Enter Details</h5>
+      <br>
+
+      <form [formGroup]="updatePerson" (ngSubmit)="UpdateData()" >
+        <div class="form-group row">
+          <label for="name" class="col-sm-3 col-form-label">ID</label>
+          <div class="col-sm-5">
+            <input type="text"   name="id" class="form-control" placeholder="Enter ID for the Person" formControlName="id">
+
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <label for="name" class="col-sm-3 col-form-label">Name</label>
+          <div class="col-sm-5">
+            <input type="text"   name="name" class="form-control"  placeholder="Enter Name" formControlName="name">
+   
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <label for="phone" class="col-sm-3 col-form-label">Phone Number</label>
+          <div class="col-sm-5">
+            <input type="text"  name="phone" class="form-control"  placeholder="Enter Phone number" formControlName="phone">
+    
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
+          <div class="col-sm-5">
+            <input type="text"   name="quantity" class="form-control"  placeholder="Enter quantity" formControlName="quantity">
+    
+        
+          </div>
+        </div>
+        <br>
+       <!-- <button  class="btn btn-outline-primary fa fa-download">Submit</button>-->
+        <button  type="submit" class="btn btn-sm btn-outline-primary">
+          <i class="fa fa-download"></i>
+          Update
+        </button>
+      </form>
+    
+    </div>
+   
+  </div>
+</div>

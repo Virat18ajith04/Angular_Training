@@ -5,6 +5,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditpersonComponent } from '../editperson/editperson.component';
 
 
 
@@ -20,14 +21,19 @@ const routes : Routes= [
        {
          path : 'salesorder',
          component : SalesOrderComponent
-       }
+       },
+       {
+        path : 'edit/:id',
+        component : EditpersonComponent
+       },
 
 ]
 @NgModule({
   declarations: [
     SalesOrderComponent,
     InvoiceComponent,
-    DashboardComponent
+    DashboardComponent,
+    EditpersonComponent
   ],
   imports: [
     CommonModule,
